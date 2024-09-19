@@ -1,0 +1,22 @@
+{% extends "organs/base.html" %}
+
+{% block page-title %}
+    {{title}}
+{% endblock  %}
+
+{% comment %} 
+{% block page-data %}
+    {% for organ,function in organs.items %}
+        <h1>{{organ}} :</h1> <p>{{function}}</p>
+        <br>
+        <br>
+    {% endfor %}
+{% endblock  %} {% endcomment %}
+
+
+{% block page-data %}
+{% for organ in organs %}
+    <a href="http://127.0.0.1:8000/{{organ_system}}/{{organ}}">{{organ}}</a>
+    <br>
+{% endfor %}
+{% endblock  %}

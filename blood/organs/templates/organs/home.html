@@ -1,0 +1,16 @@
+{% extends "organs/base.html" %}
+
+{% block page-title %}
+    {{title}}
+{% endblock  %}
+
+{% block page-welcome %}
+    These are the organ systems of a mammal body.
+{% endblock  %}
+
+{% block page-data %}
+    {% for organ_system in organ_systems %}
+        <a href="http://127.0.0.1:8000/{{organ_system}}" style="text-decoration:none">{{organ_system}}</a>
+        <br>
+    {% endfor %}
+{% endblock  %}

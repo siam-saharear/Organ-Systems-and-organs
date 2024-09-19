@@ -1,0 +1,30 @@
+{% extends "organs/base.html" %}
+
+{% block page-title %}
+    {{title}}
+{% endblock  %}
+
+
+
+{% block page-data %}
+<form method="post", action="/add_organ/">
+    {% csrf_token %}
+    <label for="organ_system">Select an Organ System:</label>
+    <select name="organ_system" id="organ_system">
+        {% for organ in all_organ_systems %}
+        <option value="{{ organ }}">{{ organ|capfirst }}</option>  <!-- Value and Label for each option -->
+        {% endfor %}
+    </select>   
+    <br>
+    <br>
+    <label >Enter Organ name:</label>
+    {{form.organ_name}}
+    <br>
+    <label for="organ_system">Enter the Organ function:</label>
+        {{form.organ_function}}
+        <br>
+    <button type="submit", name= "save">add this to organ</button>
+</form>
+
+
+    {% endblock  %}
